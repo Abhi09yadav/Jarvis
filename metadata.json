@@ -1,0 +1,6 @@
+{
+  "name": "JARVIS Voice Assistant - Abhishek Protocol",
+  "description": "Futuristic holographic JARVIS voice assistant with voice commands to open YouTube, sing songs, run diagnostics, and assist engineering tasks.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

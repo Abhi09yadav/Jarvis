@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --hud-cyan: #00f0ff;
+    --hud-cyan-dim: #00a8b5;
+    --hud-blue: #0088ff;
+    --hud-amber: #ffaa00;
+    --hud-red: #ff3344;
+  }
+
+  body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #030712;
+    color: #38bdf8;
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.05) 0%, transparent 70%),
+      linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-attachment: fixed;
+  }
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', monospace, sans-serif;
+}
+
+.font-mono-tech {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.hud-glow {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+.hud-glow-amber {
+  text-shadow: 0 0 10px rgba(255, 170, 0, 0.7), 0 0 20px rgba(255, 170, 0, 0.4);
+}
+
+.hud-box-glow {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.hud-box-glow-active {
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5), inset 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.arc-pulse {
+  animation: arcPulseAnim 2.5s infinite ease-in-out;
+}
+
+@keyframes arcPulseAnim {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5), inset 0 0 20px rgba(0, 240, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 45px rgba(0, 240, 255, 0.9), inset 0 0 35px rgba(0, 240, 255, 0.8);
+  }
+}
+
+.spin-slow {
+  animation: spin 20s linear infinite;
+}
+
+.spin-reverse-slow {
+  animation: spinReverse 15s linear infinite;
+}
+
+.spin-medium {
+  animation: spin 8s linear infinite;
+}
+
+.spin-reverse-medium {
+  animation: spinReverse 6s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Scanline overlay */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 3px 100%;
+  pointer-events: none;
+}
